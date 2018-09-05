@@ -8,7 +8,8 @@ function getQuote(){
 	
 	  computeDatas(values);
    	  showResults('totalquoteprice',total_price);
-    }
+	}
+	
 }
 
 function getValuesFromForm(){
