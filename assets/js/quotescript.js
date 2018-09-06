@@ -82,11 +82,11 @@ function computeDatas(returned_values) {
 
 	}else if (range == "premium") {
 
-		total_price = (12345 * number_elevatorstosell) * 1.13;
+		total_price = (Math.ceil (12345 * number_elevatorstosell) * 1.13);
 
 	}else if (range == "excelium") {
 
-		total_price = (15400 * number_elevatorstosell) * 1.16;
+		total_price = (Math.ceil (15400 * number_elevatorstosell) * 1.16);
 		
 	};	
 
@@ -97,7 +97,7 @@ function computeDatas(returned_values) {
 
 function showResults(wheretodisplay,valuetodisplay) {
 
-	document.getElementById(wheretodisplay).innerHTML= valuetodisplay;
+	document.getElementById(wheretodisplay).innerHTML= Math.ceil (valuetodisplay);
 	
 	}
 
@@ -164,7 +164,7 @@ function showResults(wheretodisplay,valuetodisplay) {
 	 var e = document.getElementById("building_type");
 	 building_type = e[e.selectedIndex].value;
 
-	//var building_type = document.querySelector('input[name="range"]:checked').value;
+	var rangetype = document.querySelector('input[name="range"]:checked').value;
 	
 	 var enteredvalues = getValuesFromForm(); 
 	
@@ -172,36 +172,125 @@ function showResults(wheretodisplay,valuetodisplay) {
 	if (building_type === "residential") {
 		var error = false; 
 		if (!enteredvalues["number_appartments"] || enteredvalues["number_appartments"]===0 ) {
-			error = true; 
+			(error = true); 
 		};
+		if  (error === true) {
+			alert ("please fill all the required fields"); 
+		}; 
 		if (!enteredvalues["number_floors"] || enteredvalues["number_floors"]===0 ) {
 				error = true;
+		}; if  (error === true) {
+			alert ("please fill all the required fields"); 
 		};
 		if (!enteredvalues["number_sublevels"] || enteredvalues["number_sublevels"]===0 ) {
-					error = true;	
-	}; 
+				error = true; 
+		}
+		  if  (error === true) {
+							alert ("please fill all the required fields"); 	
+	} else {
+			getQuote(); 
 	 
-}; 
-	
+        }
+	} 
+
 	if (building_type === "commercial") {
 		
-	if (!enteredvalues["number_shafts"] || enteredvalues["number_shafts"]===0 ) {
+		if (!enteredvalues["number_shafts"] || enteredvalues["number_shafts"]===0 ) {
+				error = true;
+		}	
+		if  (error === true) {
+			alert ("please fill all the required fields"); 
+		} else {
+			getQuote(); 
+		}
+	
+	} 
+ 	
+
+    if (building_type === "corporate") {
+   
+		if (!enteredvalues["number_businessrental"] || enteredvalues["number_businessrental"]===0 ) {
 			error = true;
-	};		
-	if  (error === true) {
-		alert ("please fill all the required fields"); 
-	} else {
-		getQuote(); 
+		}
+		if  (error === true) {
+			alert ("please fill all the required fields");
+		}
+		if (!enteredvalues["number_floors"] || enteredvalues["number_floors"]===0) {
+			error = true;
+		}
+		if (error === true) {
+			alert ("please fill all the required fields");
+		}
+		if (!enteredvalues["number_sublevels"] || enteredvalues["number_sublevels"]===0 ) {
+			error = true;
+		}
+		if (error === true) {
+			alert ("please fill all the required fields");
+		}
+		if (!enteredvalues["number_parking"] || enteredvalues["number_parking"]===0 ) {
+			error = true;
+		}
+		if (error === true) {
+			alert ("please fill all the required fields"); 
+		}
+		
+		if (!enteredvalues["number_occupants"] || enteredvalues["number_occupants"]===0 ) {
+				error = true;
+		}
+		if (error === true) {
+			alert ("please fill all the required fields"); 
+		} else {
+			getQuote();
+		}
+
 	}
-	
-	}; 
-	
-	
+    
+	if (building_type === "hybrid") {
+   
+		if (!enteredvalues["number_commercialspaces"] || enteredvalues["number_commercialspaces"]===0 ) {
+			error = true;
+		}
+		if  (error === true) {
+			alert ("please fill all the required fields");
+		}
+		if (!enteredvalues["number_floors"] || enteredvalues["number_floors"]===0) {
+			error = true;
+		}
+		if (error === true) {
+			alert ("please fill all the required fields");
+		}
+		if (!enteredvalues["number_sublevels"] || enteredvalues["number_sublevels"]===0 ) {
+			error = true;
+		}
+		if (error === true) {
+			alert ("please fill all the required fields");
+		}
+		if (!enteredvalues["number_parking"] || enteredvalues["number_parking"]===0 ) {
+			error = true;
+		}
+		if (error === true) {
+			alert ("please fill all the required fields"); 
+		}
+		
+		if (!enteredvalues["number_occupants"] || enteredvalues["number_occupants"]===0 ) {
+				error = true;
+		}
+		if (error === true) {
+			alert ("please fill all the required fields"); 
+		} 
+		if (!enteredvalues["number_activity"] || enteredvalues["number_activity"]===0 ) {
+			error = true;
+	    }
+	   if (error === true) {
+		alert ("please fill all the required fields"); 
+	   }
+		else {
+			getQuote();
+		}
 
+	}
 
-
-
-
+ }
 
 	//if (!enteredvalues["number_appartments"] || enteredvalues["number_appartments"]===0 ) {
 		// error = true; 
@@ -219,6 +308,4 @@ function showResults(wheretodisplay,valuetodisplay) {
 //		error = true;
 //	}
 //	return error; 
-
-}
 

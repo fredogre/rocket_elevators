@@ -255,11 +255,12 @@ c
 			<!-- Quotes -->
 			<section id="Quotes"> 
 				
-				<div class="container">
+				
+			<div class="col-sm-10 col-sm offset-1">
 
-					<div class="row">
+				<!--	<div class="row">
 					
-						<div class="col-md-12 col-sm-12">
+						<div class="col-md-12 col-sm-12">-->
 							<figure 
 								.validate 				- very important, to activate validation plugin
 							
@@ -274,7 +275,7 @@ c
 								NOTE: Add .required class for required fields.
 								This form example already used on Careers page: page-careers.html
 							 -->
-							<form id="quote_form" class="validate" action="" method="post" enctype="multipart/form-data" data-success="Sent! Thank you!" data-toastr-position="top-right">
+							<form id="quote_form" class="validate"  method="post" enctype="multipart/form-data" data-success="Sent! Thank you!" data-toastr-position="top-right">
 								<fieldset>
 									<!-- required [php action request] -->
 									<input type="hidden" name="action" value="contact_send" />
@@ -283,7 +284,7 @@ c
 										<div class="col-md-4 col-sm-4">
 											<label>Building Type *</label>
 											<select id="building_type"  class="form-control pointer required" onchange="display_relevant_field(this)">
-												<option value="">--- Select ---</option> 
+												<option>--- Select ---</option> 
 												<option value="residential">Residential</option>
 												<option value="commercial">Commercial</option>
 												<option value="corporate">Corporate</option>
@@ -297,48 +298,48 @@ c
 									<div class="row">
 										<div class="col-md-4 col-sm-4" id="app_section"> 
 											<label>Number of appartments in the building *</label>
-											<input type="text" id="number_appartments" value="" class="form-control required">
+											<input type="text" id="number_appartments"  class="form-control required">
 										</div>
 										<div class="col-md-4 col-sm-4" id="floors_section"> 
 											<label>Number of floors in the building *</label>
-											<input type="text" id="number_floors" value="" class="form-control required">
+											<input type="text" id="number_floors"  class="form-control required">
 										</div>
 									</div>
 							
 									<div class="row">
 										<div class="col-md-4 col-sm-4" id="sublvls_section">
 											<label>Number of sub-levels in the building *</label>
-											<input type="text" id="number_sublevels" value="" class="form-control required">
+											<input type="text" id="number_sublevels"  class="form-control required">
 										</div>
 
 										<div class="col-md-4 col-sm-4" id="comm_section">
 											<label>Number of distinct commercial spaces *</label>
-											<input type="text" id="number_commercialspaces" value="" class="form-control required">
+											<input type="text" id="number_commercialspaces" class="form-control required">
 										</div>
 									</div>
 							
 									<div class="row">
 										<div class="col-md-4 col-sm-4" id="prk_section">
 											<label>Number of parking lot spaces *</label>
-											<input type="text" id="number_parking" value="" class="form-control required">
+											<input type="text" id="number_parking"  class="form-control required">
 										</div>
 									</div>
 							
 									<div class="row">
 										<div class="col-md-4 col-sm-4" id="shafts_section">
 											<label> Number of elevator shafts *</label>
-											<input type="text" id="number_shafts" value="" class="form-control required">
+											<input type="text" id="number_shafts"  class="form-control required">
 										</div>
 										<div class="col-md-4 col-sm-4" id="business_section"> 
 											<label> Number of business rental spaces available *</label>
-											<input type="text" id="number_businessrental" value="" class="form-control required">
+											<input type="text" id="number_businessrental"  class="form-control required">
 										</div>
 									</div>
 							
 									<div class="row">
 										<div class="col-md-4 col-sm-4" id="occ_section"> 
 											<label> Maximum number of occupants per floor *</label>
-											<input type="text" id="number_occupants" value="" class="form-control required">
+											<input type="text" id="number_occupants"  class="form-control required">
 										</div>
 									</div>
 
@@ -346,7 +347,7 @@ c
 										<div class="col-md-4 col-sm-4">
 											<label> Maximum building activity time *</label>
 											<select id="number_activity" class="form-control pointer required">
-												<option value="">--- Select ---</option>
+												<option>--- Select ---</option>
 												<option value="1">1 hour</option>
 												<option value="2">2 hours</option>
 												<option value="3">3 hours</option>
@@ -408,7 +409,7 @@ c
 										Estimated Price US$
 									 
 										<label id="totalquoteprice"> 
-											
+					
 										 
 										</label>
 									
@@ -421,34 +422,31 @@ c
 
 								<div class="row">
 									<div class="col-md-12">
-										<button type="submit" class="btn btn-danger" onclick="getQuote();"><i class="fa fa-check"></i> SEND APPLICATION</button>
+										<button type="submit" class="btn btn-danger" onclick="validateinput();"><i class="fa fa-check"></i> SEND APPLICATION</button>
 									</div>
 								</div>
 							</form>
-											
+						</section>			
 							<div>
 
 							</div>
-							<section class="page-header page-header-xs dark">
-								<div class="container">
-				
-									<h1>Want More Details?  </h1>
-				
-									<!-- breadcrumbs -->
-									<!--<ol class="breadcrumb">
-										<li><a href="#"></a></li>
-										<li><a href="#">Pages</a></li>
-										<li class="active">Services</li>-->
-									<!-- /breadcrumbs -->
-				
-								</div>
-							</section>
-			
-						 
 
+										<!-- Parallax -->
+			<section class="parallax parallax-1" style="background-image: url('Rocket Elevator Assets/nycskyline.jpg');">
+				<div class="overlay dark-5"><!-- dark overlay [1 to 9 opacity] --></div>
 
-	</div>
+				<div class="container">
 
+					<div class="text-center">
+						<h2 class="fs-40 fw-300"> Leveling You Up Since Today </h2>
+						
+					</div>
+
+				</div>
+			</section>
+			<!-- /Parallax -->
+
+		
 
 			<!-- FOOTER -->
 
@@ -478,7 +476,7 @@ c
 								<!-- Newsletter Form -->
 								<p>Subscribe to Our Newsletter to get Important News & Offers</p>
 	
-								<form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
+								<form class="validate" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
 										<input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
@@ -535,8 +533,7 @@ c
 		<script src="assets/js/quotescript.js"></script>
 		
 		
-		<!-- STYLESWITCHER - REMOVE -->
-		<script async src="demo_files/styleswitcher/styleswitcher.js"></script>
+		
 
 		<!-- PAGE LEVEL SCRIPTS [cart js] -->
 		<script>
